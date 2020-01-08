@@ -21,23 +21,36 @@ Toplin is meant to run on the same machine as your Joplin desktop client app. To
     cd toplin
     ```
 
-2. Run the server
+3. Make a copy of the `config.sample.yaml` file named `config.yaml`
+    ```
+    cp config.sample.yaml config.yaml
+    ```
+
+4. Edit config.yaml with the configuration settings specific to your application. You will at least need to specify the `joplin_token` parameter. See the **Configuration** section below for all available configuration settings.
+
+5. Run the server
     ```
     cd $GOPATH/src/github.com/geordie/toplin
     go run main.go
     ```
 
-## Environment Variables for Configuration
+## Configuration
 
-* **HTTP_ADDR:** The host and port. Default: `":8888"`
+You can specify the following configuration settings in a local `config.yaml` file.
 
-* **HTTP_CERT_FILE:** Path to cert file. Default: `""`
+* **joplin_token:** Your Joplin API token. Required.
 
-* **HTTP_KEY_FILE:** Path to key file. Default: `""`
+* **joplin_port:** The port on which the Joplin API is running. Default: `"41184`
 
-* **HTTP_DRAIN_INTERVAL:** How long application will wait to drain old requests before restarting. Default: `"1s"`
+* **http_addr:** The host and port for Toplin. Default: `":8888"`
 
-* **COOKIE_SECRET:** Cookie secret for session. Default: Auto generated.
+* **http_cert_file:** Path to cert file. Default: `""`
+
+* **http_key_file:** Path to key file. Default: `""`
+
+* **http_drain_interval:** How long application will wait to drain old requests before restarting. Default: `"1s"`
+
+* **cookie_secret:** Cookie secret for session. Default: Auto generated.
 
 
 ## Vendoring Dependencies
