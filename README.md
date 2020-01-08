@@ -2,6 +2,8 @@
 
 Toplin is a readonly web app for viewing todo lists stored in [Joplin](https://joplinapp.org/). The value add that Toplin provides is organization of your todo lists by dates for easy viewing of what's been recently done and what is currently todo.
 
+Toplin is meant to run on the same machine as your Joplin desktop client app. To access the Joplin API, Toplin requires that Joplin clipper service be enabled on your local instance of Joplin. Toplin does not require installation of the Joplin browser extension.
+
 ## Dependencies
 
 1. Go 1.4.x or greater with a properly configured $GOPATH
