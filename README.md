@@ -1,6 +1,23 @@
+## Toplin 
+
+Toplin is a readonly web app for viewing todo lists stored in [Joplin](https://joplinapp.org/). The value add that Toplin provides is organization of your todo lists by dates for easy viewing of what's been recently done and what is currently todo.
+
+## Dependencies
+
+1. Go 1.4.x or greater with a properly configured $GOPATH
+2. git
+
 ## Installation
 
-1. Install Go 1.4.x or greater, git, setup `$GOPATH`, and `PATH=$PATH:$GOPATH/bin`
+1. Clone the repository 
+    ``` 
+    git clone git@github.com:geordie/toplin.git
+    ```
+
+2. Navigate to the directory containing the cloned repository
+    ```
+    cd toplin
+    ```
 
 2. Run the server
     ```
