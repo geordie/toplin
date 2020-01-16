@@ -1,5 +1,9 @@
 package joplin
 
+import (
+	"time"
+)
+
 /* Sample json
 
 "id": "02a1f36c306465c6936802daccc729ae",
@@ -19,13 +23,18 @@ type TodoItem struct {
 	ID                string `json:"id"`
 	Title             string `json:"title"`
 	IsTodo            int    `json:"is_todo"`
-	TodoCompletedTime int    `json:"todo_completed"`
+	TodoCompletedTime int64  `json:"todo_completed"`
 	ParentID          string `json:"parent_id"`
 	UpdatedTime       int    `json:"updated_time"`
 	UserUpdatedTime   int    `json:"user_updated_time"`
 	UserCreatedTime   int    `json:"user_created_time"`
 	EncryptionApplied int    `json:"encryption_applied"`
 	ItemType          int    `json:"type_"`
+}
+
+// GetCompletedDate func
+func (t *TodoItem) GetCompletedDate() time.Time {
+	return time.Unix(0, t.TodoCompletedTime*int64(time.Millisecond))
 }
 
 // TodoItems struct
