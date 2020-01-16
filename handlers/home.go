@@ -34,9 +34,9 @@ func HomeHandler(token string, port int) http.Handler {
 			return
 		}
 
-		var todoItems []joplin.TodoItem
+		var todoItems joplin.TodoItems
 
-		err = json.Unmarshal([]byte(bodyBytes), &todoItems)
+		err = json.Unmarshal([]byte(bodyBytes), &todoItems.MyItems)
 		if err != nil {
 			fmt.Println("error:", err)
 		}
